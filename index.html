@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URL Generator</title>
+    <title>URL and Layer Information Generator</title>
     <style>
         body { font-family: Arial, sans-serif; padding: 20px; }
-        .container { margin: auto; max-width: 600px; }
+        .container { margin: auto; max-width: 800px; }
         .input-group { margin-bottom: 10px; }
-        .input-group label { margin-right: 10px; }
-        .input-group input { padding: 8px; }
-        .output-group textarea { width: 100%; padding: 8px; height: 100px; }
-        .button { padding: 10px 15px; cursor: pointer; }
+        .input-group label { margin-right: 10px; display: block; margin-top: 10px; }
+        .input-group input, .input-group select { padding: 8px; width: 100%; }
+        .button { padding: 10px 15px; cursor: pointer; margin-top: 10px; }
+        .layer-info { margin-top: 20px; }
+        .layer { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; }
+        .layer h3 { margin-top: 0; }
     </style>
 </head>
 <body>
@@ -21,15 +23,22 @@
             <input type="text" id="id" placeholder="Enter ID">
         </div>
         <div class="input-group">
-            <label for="layerName">Layer Name:</label>
+            <input type="radio" id="layerNameOption" name="option" value="layerName" checked>
+            <label for="layerNameOption">Layer Name</label>
             <input type="text" id="layerName" placeholder="Enter Layer Name">
         </div>
-        <button onclick="generateUrl()" class="button">Generate</button>
+        <div class="input-group">
+            <input type="radio" id="getLayersOption" name="option" value="getLayers">
+            <label for="getLayersOption">Get Layers</label>
+            <button onclick="getLayers()" class="button">Get Layers</button>
+        </div>
+        <button onclick="generateUrl()" class="button">Generate URL</button>
         <div class="output-group">
             <label for="generatedUrl">Generated URL:</label>
             <textarea id="generatedUrl" readonly></textarea>
         </div>
         <button onclick="copyUrl()" class="button">Copy</button>
+        <div class="layer-info" id="layerInfo"></div>
     </div>
 
     <script>
@@ -37,15 +46,58 @@
             const id = document.getElementById('id').value.trim();
             const layerName = document.getElementById('layerName').value.trim();
             const baseUrl = "https://services-uswest2.sentinel-hub.com/ogc/wmts/";
-            const parameters = `?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=${encodeURIComponent(layerName)}&STYLE=default&FORMAT=image%2Fpng&TILEMATRIXSET=PopularWebMercator256&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}`;
+            const option = document.querySelector('input[name="option"]:checked').value;
+
+            let parameters;
+            if (option === 'layerName') {
+                parameters = `?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=${encodeURIComponent(layerName)}&STYLE=default&FORMAT=image%2Fpng&TILEMATRIXSET=PopularWebMercator256&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}`;
+            } else {
+                parameters = `?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetCapabilities`;
+            }
+
             const fullUrl = baseUrl + id + parameters;
             document.getElementById('generatedUrl').value = fullUrl;
+            if (option === 'getLayers') {
+                // Display URL but also trigger getLayers since it's the expected action
+                getLayers();
+            }
         }
 
         function copyUrl() {
             const copyText = document.getElementById('generatedUrl');
             copyText.select();
             document.execCommand('copy');
+        }
+
+        function getLayers() {
+            const id = document.getElementById('id').value.trim();
+            const url = `https://services-uswest2.sentinel-hub.com/ogc/wmts/${id}?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetCapabilities`;
+
+            fetch(url)
+                .then(response => response.text())
+                .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
+                .then(data => {
+                    const layers = data.querySelectorAll('Layer');
+                    const layerInfoDiv = document.getElementById('layerInfo');
+                    layerInfoDiv.innerHTML = ''; // Clear previous results
+
+                    layers.forEach(layer => {
+                        const title = layer.querySelector('Title').textContent;
+                        const abstract = layer.querySelector('Abstract').textContent;
+                        const identifier = layer.querySelector('Identifier').textContent;
+                        const boundingBox = layer.querySelector('WGS84BoundingBox');
+                        const lowerCorner = boundingBox.querySelector('LowerCorner').textContent;
+                        const upperCorner = boundingBox.querySelector('UpperCorner').textContent;
+
+                        const layerDiv = document.createElement('div');
+                        layerDiv.className = 'layer';
+                        layerDiv.innerHTML = `<h3>${title}</h3><p>${abstract}</p><p>Identifier: ${identifier}</p><p>WGS84 Bounding Box: ${lowerCorner} to ${upperCorner}</p>`;
+                        layerInfoDiv.appendChild(layerDiv);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching or parsing:', error);
+                });
         }
     </script>
 </body>
