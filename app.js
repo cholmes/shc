@@ -1,39 +1,47 @@
-const basemapUrl = 'https://1.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png';
-const basemapUrl2 = 'https://4.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png'
+const labelsUrl = 'https://1.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png';
+const nolabelsUrl = 'https://4.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png';
 let overlayUrl = ''; // This will be updated by the user input
 
-const basemapLayer = new ol.layer.Tile({
+const labelsLayer = new ol.layer.Tile({
     source: new ol.source.XYZ({
-        url: basemapUrl
+        url: labelsUrl
     })
 });
 
-const basemapLayer2 = new ol.layer.Tile({
+const nolabelsLayer = new ol.layer.Tile({
     source: new ol.source.XYZ({
-        url: basemapUrl2
+        url: nolabelsUrl
     })
 });
 
 let overlayLayer = new ol.layer.Tile({
     source: new ol.source.XYZ({
-        url: overlayUrl, // This will be updated by the user input
-        tileSize: [512, 512] // Specify the tile size here
-        // tilePixelRatio: 2, // Uncomment if your tiles are high-DPI (Retina) tiles
+        url: overlayUrl // Initially empty
     })
 });
 
 const map = new ol.Map({
     target: 'map',
-    layers: [basemapLayer2, basemapLayer, overlayLayer],
+    layers: [nolabelsLayer, labelsLayer, overlayLayer],
     view: new ol.View({
-        center: ol.proj.fromLonLat([0, 0]),
-        zoom: 2
+        center: ol.proj.fromLonLat([-0.7507, 44.8178]), // Coordinates are longitude, latitude
+        zoom: 9
     })
 });
 
 function updateMap() {
-    overlayUrl = document.getElementById('xyzUrl').value;
+    const year = document.getElementById('year').value;
+    overlayUrl = document.getElementById('xyzUrl').value + `&time=${year}-01-01`;
     overlayLayer.setSource(new ol.source.XYZ({
         url: overlayUrl
     }));
+}
+
+function changeYear(delta) {
+    let year = parseInt(document.getElementById('year').value);
+    year += delta;
+    if (year >= 2013 && year <= 2022) {
+        document.getElementById('year').value = year;
+        updateMap();
+    }
 }
