@@ -14,7 +14,7 @@
         .layer { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; cursor: pointer; }
         .layer:hover { background-color: #f0f0f0; }
         .layer h3 { margin-top: 0; }
-        .map-link { margin-top: 20px; }
+        .map-link, .generated-urls { margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -25,6 +25,7 @@
         </div>
         <div class="layer-info" id="layerInfo"></div>
         <div id="mapLink" class="map-link"></div>
+        <div id="generatedUrls" class="generated-urls"></div> <!-- Placeholder for generated URLs -->
     </div>
 
     <script>
@@ -33,8 +34,10 @@
             const baseUrl = "https://services-uswest2.sentinel-hub.com/ogc/wmts/";
             const parameters = `?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=${encodeURIComponent(identifier)}&STYLE=default&FORMAT=image%2Fpng&TILEMATRIXSET=PopularWebMercator256&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}`;
             const fullUrl = baseUrl + id + parameters;
-            alert(`Generated URL for layer: ${identifier}\n${fullUrl}`);
-            // You can choose to display this URL in a different way if you prefer
+
+            const urlElement = document.createElement('div');
+            urlElement.innerHTML = `<a href="${fullUrl}" target="_blank">${fullUrl}</a>`;
+            document.getElementById('generatedUrls').appendChild(urlElement);
         }
 
         function getLayers() {
