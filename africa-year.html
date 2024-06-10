@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>OpenLayers Map</title>
+    <title>Map of Africa Landuse after Deforestation</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/openlayers/dist/ol.css">
     <style>
         #map {
@@ -12,34 +12,68 @@
         #controls {
             margin: 10px;
         }
+        .legend-overlay {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: white;
+            padding: 10px;
+            border: 1px solid black;
+        }
     </style>
 </head>
 <body>
     <div id="controls">
         <label for="api-key">API Key:</label>
         <input type="text" id="api-key" placeholder="Enter your Planet API key">
-        <label for="year">Year:</label>
-        <select id="year">
+        
+        <label for="basemap-year">Basemap Year:</label>
+        <select id="basemap-year">
+            <option value="none">None</option>
             <option value="2016">2016</option>
             <option value="2017">2017</option>
             <option value="2018">2018</option>
             <option value="2019">2019</option>
-            <option value="2020">2020</option>
+            <option value="2020" selected>2020</option>
             <option value="2021">2021</option>
             <option value="2022">2022</option>
             <option value="2023">2023</option>
         </select>
-        <label for="quarter">Quarter:</label>
-        <select id="quarter">
+
+        <label for="basemap-quarter">Quarter:</label>
+        <select id="basemap-quarter">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
         </select>
+        
+        <label for="overlay-year">Overlay Year:</label>
+        <select id="overlay-year">
+            <option value="overview" selected>Overview</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+        </select>
+        
         <label for="opacity">Opacity:</label>
         <input type="range" id="opacity" min="0" max="1" step="0.01" value="1">
+
+        <label for="show-legend">Show Legend:</label>
+        <input type="checkbox" id="show-legend">
     </div>
     <div id="map"></div>
+    <div id="legend" class="legend-overlay" style="display: none;">
+        <img src="https://github.com/cholmes/shc/assets/407017/ad352245-7ef7-42d8-ae86-248fdf172a54" alt="Legend" width="300">
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/openlayers/dist/ol.js"></script>
     <script>
         // Define the default map URL
@@ -51,8 +85,8 @@
             return response.status === 200;
         }
 
-        // Define the Sentinel Hub WMTS layer
-        const sentinelLayer = new ol.layer.Tile({
+        // Create the initial Sentinel Hub WMTS layer
+        let sentinelLayer = new ol.layer.Tile({
             source: new ol.source.WMTS({
                 url: 'https://services-uswest2.sentinel-hub.com/ogc/wmts/5ffceb61-98d2-46da-8960-311e88dc9a6a',
                 layer: '_2_COLOR_TRANSPARENT',
@@ -90,13 +124,51 @@
         // Function to update the base layer
         async function updateLayer() {
             const apiKey = document.getElementById('api-key').value;
-            const year = document.getElementById('year').value;
-            const quarter = document.getElementById('quarter').value;
+            const basemapYear = document.getElementById('basemap-year').value;
+            const basemapQuarter = document.getElementById('basemap-quarter').value;
+            const overlayYear = document.getElementById('overlay-year').value;
+
             const baseUrl = await setMapUrl(apiKey);
-            const newUrl = baseUrl.replace('2023q1', `${year}q${quarter}`);
-            planetBasemapLayer.setSource(new ol.source.XYZ({
-                url: newUrl
-            }));
+            const newUrl = baseUrl.replace('2023q1', `${basemapYear}q${basemapQuarter}`);
+            
+            if (basemapYear === "none") {
+                planetBasemapLayer.setSource(new ol.source.XYZ({
+                    url: DEFAULT_MAP_URL
+                }));
+            } else {
+                planetBasemapLayer.setSource(new ol.source.XYZ({
+                    url: newUrl
+                }));
+            }
+
+            if (overlayYear === "overview") {
+                sentinelLayer.setSource(new ol.source.WMTS({
+                    url: 'https://services-uswest2.sentinel-hub.com/ogc/wmts/5ffceb61-98d2-46da-8960-311e88dc9a6a',
+                    layer: '_2_COLOR_TRANSPARENT',
+                    matrixSet: 'PopularWebMercator256',
+                    format: 'image/png',
+                    style: 'default',
+                    tileGrid: new ol.tilegrid.WMTS({
+                        origin: ol.extent.getTopLeft(ol.proj.get('EPSG:3857').getExtent()),
+                        resolutions: ol.tilegrid.createXYZ().getResolutions(),
+                        matrixIds: Array.from({ length: 20 }, (v, k) => k.toString())
+                    })
+                }));
+            } else {
+                const timeParam = `${overlayYear}-01-01/${overlayYear}-12-31`;
+                sentinelLayer.setSource(new ol.source.WMTS({
+                    url: `https://services-uswest2.sentinel-hub.com/ogc/wmts/5ffceb61-98d2-46da-8960-311e88dc9a6a?TIME=${timeParam}`,
+                    layer: '_4_COLOR_TRANSPARENT_TIME',
+                    matrixSet: 'PopularWebMercator256',
+                    format: 'image/png',
+                    style: 'default',
+                    tileGrid: new ol.tilegrid.WMTS({
+                        origin: ol.extent.getTopLeft(ol.proj.get('EPSG:3857').getExtent()),
+                        resolutions: ol.tilegrid.createXYZ().getResolutions(),
+                        matrixIds: Array.from({ length: 20 }, (v, k) => k.toString())
+                    })
+                }));
+            }
         }
 
         // Function to set the map URL
@@ -117,11 +189,19 @@
             sentinelLayer.setOpacity(opacity);
         }
 
+        // Function to toggle the legend visibility
+        function toggleLegend() {
+            const showLegend = document.getElementById('show-legend').checked;
+            document.getElementById('legend').style.display = showLegend ? 'block' : 'none';
+        }
+
         // Add event listeners to update layer and opacity
-        document.getElementById('year').addEventListener('change', updateLayer);
-        document.getElementById('quarter').addEventListener('change', updateLayer);
+        document.getElementById('basemap-year').addEventListener('change', updateLayer);
+        document.getElementById('basemap-quarter').addEventListener('change', updateLayer);
+        document.getElementById('overlay-year').addEventListener('change', updateLayer);
         document.getElementById('opacity').addEventListener('input', updateOpacity);
         document.getElementById('api-key').addEventListener('change', updateLayer);
+        document.getElementById('show-legend').addEventListener('change', toggleLegend);
 
         // Initial layer setup
         updateLayer();
