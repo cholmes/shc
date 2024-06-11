@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,7 +145,13 @@
             })
         });
 
-        // Initial Planet basemap layer
+        // initialize carto basemap layer
+        let cartoBasemapLayer = new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                url: DEFAULT_MAP_URL
+            })
+        });
+
         let planetBasemapLayer = new ol.layer.Tile({
             source: new ol.source.XYZ({
                 url: DEFAULT_MAP_URL
@@ -155,7 +162,7 @@
         const map = new ol.Map({
             target: 'map',
             layers: [
-                planetBasemapLayer,
+                cartoBasemapLayer,
                 sentinelLayer
             ],
             view: new ol.View({
@@ -174,6 +181,12 @@
             const baseUrl = await setMapUrl(apiKey);
             const newUrl = baseUrl.replace('2023q1', `${basemapYear}q${basemapQuarter}`);
             
+            //if there is no planetBasemapLayer, initialize it and add it to the map between carto and sentinel layers
+            if (!map.getLayers().getArray().includes(planetBasemapLayer)) {
+                map.getLayers().insertAt(1, planetBasemapLayer);
+            }
+            
+
             if (basemapYear === "none") {
                 planetBasemapLayer.setSource(new ol.source.XYZ({
                     url: DEFAULT_MAP_URL
@@ -221,7 +234,7 @@
         // Function to set the map URL
         async function setMapUrl(apiKey) {
             if (apiKey && await validateApiKey(apiKey)) {
-                document.getElementById('basemap-year').value = "2020";
+                //document.getElementById('basemap-year').value = "2020";
                 return `https://tiles{0-3}.planet.com/basemaps/v1/planet-tiles/global_quarterly_2023q1_mosaic/gmap/{z}/{x}/{y}.png?api_key=${apiKey}`;
             } else {
                 if (apiKey) {
