@@ -169,7 +169,7 @@
             if (await validateApiKey(enteredApiKey)) {
                 apiKey = enteredApiKey;
                 hideApiKeyPopup();
-                updateLayer();
+                updateBasemapLayer();
             } else {
                 alert("Invalid API key. Please try again.");
             }
@@ -226,8 +226,8 @@
             })
         });
 
-        // Function to update the base layer
-        async function updateLayer() {
+        // Function to update the basemap layer
+        async function updateBasemapLayer() {
             if (!apiKey) {
                 showApiKeyPopup();
                 return;
@@ -235,7 +235,6 @@
 
             const basemapYear = document.getElementById('basemap-year').value;
             const basemapQuarter = document.getElementById('basemap-quarter').value;
-            const overlayYear = document.getElementById('overlay-year').value;
 
             const baseUrl = await setMapUrl(apiKey);
             const newUrl = baseUrl.replace('2023q1', `${basemapYear}q${basemapQuarter}`);
@@ -257,6 +256,11 @@
                 document.getElementById('basemap-quarter').style.display = 'block';
                 document.getElementById('quarter-label').style.display = 'block';
             }
+        }
+
+        // Function to update the overlay layer
+        async function updateOverlayLayer() {
+            const overlayYear = document.getElementById('overlay-year').value;
 
             if (overlayYear === "overview") {
                 sentinelLayer.setSource(new ol.source.WMTS({
@@ -312,10 +316,10 @@
             document.getElementById('legend').style.display = showLegend ? 'block' : 'none';
         }
 
-        // Add event listeners to update layer and opacity
-        document.getElementById('basemap-year').addEventListener('change', updateLayer);
-        document.getElementById('basemap-quarter').addEventListener('change', updateLayer);
-        document.getElementById('overlay-year').addEventListener('change', updateLayer);
+        // Add event listeners to update basemap layer, overlay layer, and opacity
+        document.getElementById('basemap-year').addEventListener('change', updateBasemapLayer);
+        document.getElementById('basemap-quarter').addEventListener('change', updateBasemapLayer);
+        document.getElementById('overlay-year').addEventListener('change', updateOverlayLayer);
         document.getElementById('opacity').addEventListener('input', updateOpacity);
         document.getElementById('show-legend').addEventListener('change', toggleLegend);
         document.getElementById('submit-api-key').addEventListener('click', handleApiKeySubmit);
@@ -336,5 +340,6 @@
         }));
     </script>
 </body>
+
 
 </html>
