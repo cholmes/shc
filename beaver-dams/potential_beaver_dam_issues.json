@@ -1,0 +1,3805 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 400 A",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "172.1 N/B",
+                "lhrs": 46979,
+                "lhrs_offset": 4.1,
+                "deciever_installed": "NULL",
+                "id": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.775167,
+                    44.9409
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 400 A",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "172.5 N/B",
+                "lhrs": 46979,
+                "lhrs_offset": 4.5,
+                "deciever_installed": "YES",
+                "id": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.77575,
+                    44.944867
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 400 A",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "181.5 N/B",
+                "lhrs": 46985,
+                "lhrs_offset": 0.552,
+                "deciever_installed": "YES",
+                "id": 3
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.77775,
+                    45.021733
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 400 A",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "191.0 N/B",
+                "lhrs": 47000,
+                "lhrs_offset": 2,
+                "deciever_installed": "NULL",
+                "id": 4
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.787533,
+                    45.11135
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 400 A",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "191.5 N/B",
+                "lhrs": 47000,
+                "lhrs_offset": 2.5,
+                "deciever_installed": "YES",
+                "id": 5
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.788467,
+                    45.11605
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 400 A",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "195.0 N/B",
+                "lhrs": 47000,
+                "lhrs_offset": 6,
+                "deciever_installed": "YES",
+                "id": 6
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.7899,
+                    45.1481
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 400 A",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "194.7 S/B",
+                "lhrs": 47000,
+                "lhrs_offset": 5.71,
+                "deciever_installed": "NULL",
+                "id": 7
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.7934,
+                    45.141683
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 400 A",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "189.5 S/B",
+                "lhrs": 47000,
+                "lhrs_offset": 0.5,
+                "deciever_installed": "YES",
+                "id": 8
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.786033,
+                    45.0925
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 400 A",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "178.4 S/B",
+                "lhrs": 46981,
+                "lhrs_offset": 3.7,
+                "deciever_installed": "NULL",
+                "id": 9
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.78375,
+                    44.999083
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 400 A",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "177.3 S/B",
+                "lhrs": 46981,
+                "lhrs_offset": 1.9,
+                "deciever_installed": "NULL",
+                "id": 10
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.782167,
+                    44.9884
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 400 A",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "168 S/B OFF RAMP",
+                "lhrs": 46979,
+                "lhrs_offset": 0.422,
+                "deciever_installed": "NULL",
+                "id": 11
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.777583,
+                    44.919867
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 400 B",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "159.2 S/B",
+                "lhrs": 46972,
+                "lhrs_offset": 3.3,
+                "deciever_installed": "YES/NEW",
+                "id": 12
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.7382,
+                    44.832067
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 400 B",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "158.4 S/B",
+                "lhrs": 46972,
+                "lhrs_offset": 2.5,
+                "deciever_installed": "NULL",
+                "id": 13
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.737767,
+                    44.824917
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 400 B",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "158.0 S/B",
+                "lhrs": 46972,
+                "lhrs_offset": 2.1,
+                "deciever_installed": "NULL",
+                "id": 14
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.738317,
+                    44.822233
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 LJR",
+                "activity": "NULL",
+                "highway": "LJR",
+                "mileage_marker": "7.2 S/B",
+                "lhrs": 35290,
+                "lhrs_offset": 7.2,
+                "deciever_installed": "NULL",
+                "id": 15
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.742967,
+                    45.139433
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 LJR",
+                "activity": "NULL",
+                "highway": "LJR",
+                "mileage_marker": "5.2(MCCOMBES RD)",
+                "lhrs": 35290,
+                "lhrs_offset": 5.2,
+                "deciever_installed": "NULL",
+                "id": 16
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.7501,
+                    45.12395
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 LJR",
+                "activity": "NULL",
+                "highway": "LJR",
+                "mileage_marker": "4.1 S/B(SHAWS)",
+                "lhrs": 35290,
+                "lhrs_offset": 4.1,
+                "deciever_installed": "YES/NEW",
+                "id": 17
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.757867,
+                    45.115433
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 7290",
+                "activity": "NULL",
+                "highway": 7290,
+                "mileage_marker": "49.2 E/B",
+                "lhrs": 45800,
+                "lhrs_offset": 0.2,
+                "deciever_installed": "NULL",
+                "id": 18
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.832833,
+                    45.28095
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 7290",
+                "activity": "NULL",
+                "highway": 7290,
+                "mileage_marker": "51.3 W/B",
+                "lhrs": 45800,
+                "lhrs_offset": 1.66,
+                "deciever_installed": "YES",
+                "id": 19
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.82915,
+                    45.267933
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 7290",
+                "activity": "NULL",
+                "highway": 7290,
+                "mileage_marker": "52.3 E/B (HALLS)",
+                "lhrs": 45800,
+                "lhrs_offset": 2.66,
+                "deciever_installed": "NULL",
+                "id": 20
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.824583,
+                    45.259517
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 7290",
+                "activity": "NULL",
+                "highway": 7290,
+                "mileage_marker": "52.7 W/B",
+                "lhrs": 45800,
+                "lhrs_offset": 3.06,
+                "deciever_installed": "YES",
+                "id": 21
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.8228,
+                    45.256333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1  141",
+                "activity": "NULL",
+                "highway": 141,
+                "mileage_marker": 39.4,
+                "lhrs": 45790,
+                "lhrs_offset": 6.862,
+                "deciever_installed": "NULL",
+                "id": 22
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.670867,
+                    45.28055
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1  141",
+                "activity": "NULL",
+                "highway": 141,
+                "mileage_marker": 40,
+                "lhrs": 45790,
+                "lhrs_offset": 7.4,
+                "deciever_installed": "NULL",
+                "id": 23
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.751,
+                    45.287683
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1  141",
+                "activity": "NULL",
+                "highway": 141,
+                "mileage_marker": "41.9 E/B",
+                "lhrs": 45790,
+                "lhrs_offset": 9.3,
+                "deciever_installed": "YES/NEW",
+                "id": 24
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.751067,
+                    45.287817
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1  141",
+                "activity": "NULL",
+                "highway": 141,
+                "mileage_marker": "47.2 E/B",
+                "lhrs": 45790,
+                "lhrs_offset": 14.6,
+                "deciever_installed": "YES/NEW",
+                "id": 25
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.803617,
+                    45.2877
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 612",
+                "activity": "NULL",
+                "highway": 612,
+                "mileage_marker": "0.5 N/B",
+                "lhrs": 65600,
+                "lhrs_offset": 0.5,
+                "deciever_installed": "NULL",
+                "id": 26
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.759683,
+                    45.119433
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT1 612",
+                "activity": "NULL",
+                "highway": 612,
+                "mileage_marker": "1.1 S/B",
+                "lhrs": 65600,
+                "lhrs_offset": 1.1,
+                "deciever_installed": "NULL",
+                "id": 27
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.778317,
+                    45.1749
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT2 400",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": 212,
+                "lhrs": 47010,
+                "lhrs_offset": 3.6,
+                "deciever_installed": "YES",
+                "id": 28
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.8481,
+                    45.28195
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT2 69 N",
+                "activity": "NULL",
+                "highway": 69,
+                "mileage_marker": "HENRY'S POND",
+                "lhrs": 35450,
+                "lhrs_offset": 3.3,
+                "deciever_installed": "YES",
+                "id": 29
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.231667,
+                    45.513583
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT2 69 N",
+                "activity": "NULL",
+                "highway": 69,
+                "mileage_marker": "ROCK \"V\"",
+                "lhrs": 35450,
+                "lhrs_offset": 4.7,
+                "deciever_installed": "YES",
+                "id": 30
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.244817,
+                    45.52325
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT2 69 N",
+                "activity": "NULL",
+                "highway": 69,
+                "mileage_marker": "BA SAH GIM",
+                "lhrs": 35450,
+                "lhrs_offset": 6.2,
+                "deciever_installed": "YES",
+                "id": 31
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.258383,
+                    45.533167
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT2 559",
+                "activity": "NULL",
+                "highway": 559,
+                "mileage_marker": "RABY LAKE",
+                "lhrs": 58509,
+                "lhrs_offset": 9.3,
+                "deciever_installed": "YES",
+                "id": 32
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.246633,
+                    45.415083
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT2 559",
+                "activity": "NULL",
+                "highway": 559,
+                "mileage_marker": "MUD BEAVER",
+                "lhrs": 58509,
+                "lhrs_offset": 11.2,
+                "deciever_installed": "YES",
+                "id": 33
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.252183,
+                    45.513583
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT2 7909 Nobel Rd",
+                "activity": "NULL",
+                "highway": 7909,
+                "mileage_marker": "CIL",
+                "lhrs": 98105,
+                "lhrs_offset": 1.1,
+                "deciever_installed": "YES/NEW",
+                "id": 34
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.1037,
+                    45.421967
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT3 118",
+                "activity": "NULL",
+                "highway": 118,
+                "mileage_marker": "OAKLEY CRESENT",
+                "lhrs": 42730,
+                "lhrs_offset": 11.1,
+                "deciever_installed": "YES",
+                "id": 35
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.076807,
+                    44.997445
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT3 118",
+                "activity": "NULL",
+                "highway": 118,
+                "mileage_marker": "ORILLIA POWER",
+                "lhrs": 42730,
+                "lhrs_offset": 19.8,
+                "deciever_installed": "YES",
+                "id": 36
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.179307,
+                    44.997543
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT4 11",
+                "activity": "Active",
+                "highway": "Hwy 11 S/B",
+                "mileage_marker": "Huntsville",
+                "lhrs": 17073,
+                "lhrs_offset": 2.8,
+                "deciever_installed": "NULL",
+                "id": 39
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.3024,
+                    45.236967
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT4 11",
+                "activity": "Active",
+                "highway": "Hwy 11 N/B",
+                "mileage_marker": "Chaffey",
+                "lhrs": 17080,
+                "lhrs_offset": 0.3,
+                "deciever_installed": "NULL",
+                "id": 40
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.244767,
+                    45.315317
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 11",
+                "activity": "Inactive",
+                "highway": "Hwy 11 N/B",
+                "mileage_marker": "Huntsville",
+                "lhrs": 17092,
+                "lhrs_offset": 3.8,
+                "deciever_installed": "NULL",
+                "id": 44
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.23785,
+                    45.399017
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 11",
+                "activity": "Inactive",
+                "highway": "Hwy 11 N/B",
+                "mileage_marker": "Perry",
+                "lhrs": 17100,
+                "lhrs_offset": 4.4,
+                "deciever_installed": "NULL",
+                "id": 45
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.272467,
+                    45.475683
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 11",
+                "activity": "Active",
+                "highway": "Hwy 11 S/B",
+                "mileage_marker": "Perry",
+                "lhrs": 17100,
+                "lhrs_offset": 5.8,
+                "deciever_installed": "NULL",
+                "id": 46
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.28395,
+                    45.28395
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 11",
+                "activity": "Active",
+                "highway": "Hwy 11 S/B",
+                "mileage_marker": "Huntsville",
+                "lhrs": 17093,
+                "lhrs_offset": 2.9,
+                "deciever_installed": "NULL",
+                "id": 47
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.241117,
+                    45.4318
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 11",
+                "activity": "Inactive",
+                "highway": "Hwy 11 S/B",
+                "mileage_marker": "Armour",
+                "lhrs": 17142,
+                "lhrs_offset": 4.3,
+                "deciever_installed": "NULL",
+                "id": 48
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.414983,
+                    45.637133
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 11",
+                "activity": "Inactive",
+                "highway": "Hwy 11 S/B",
+                "mileage_marker": "Strong",
+                "lhrs": 17142,
+                "lhrs_offset": 12,
+                "deciever_installed": "NULL",
+                "id": 49
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.4404,
+                    45.703583
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 11",
+                "activity": "Active",
+                "highway": "Hwy 11 S/B",
+                "mileage_marker": "Huntsville",
+                "lhrs": 17093,
+                "lhrs_offset": 3,
+                "deciever_installed": "NULL",
+                "id": 50
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.240367,
+                    45.429817
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT4 11",
+                "activity": "Inactive",
+                "highway": "Hwy 11 S/B",
+                "mileage_marker": "Huntsville",
+                "lhrs": 17060,
+                "lhrs_offset": 12.325,
+                "deciever_installed": null,
+                "id": 38
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.314033,
+                    45.1962
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT4 632",
+                "activity": "Inactive",
+                "highway": "Hwy 632 South",
+                "mileage_marker": "Humphrey",
+                "lhrs": 68200,
+                "lhrs_offset": 1.25,
+                "deciever_installed": null,
+                "id": 43
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.6681,
+                    45.206567
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT4 141",
+                "activity": "Inactive",
+                "highway": "Hwy 141E/B",
+                "mileage_marker": "Stephenson",
+                "lhrs": 45753,
+                "lhrs_offset": 1.9,
+                "deciever_installed": null,
+                "id": 42
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.3355,
+                    45.2091
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT4 11",
+                "activity": "Inactive",
+                "highway": "Hwy 11 N/B",
+                "mileage_marker": "Stephenson",
+                "lhrs": 17073,
+                "lhrs_offset": 1,
+                "deciever_installed": null,
+                "id": 41
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.3131,
+                    45.2218
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 518W",
+                "activity": "Inactive",
+                "highway": "Hwy 518 W",
+                "mileage_marker": "McMurr/ Mont",
+                "lhrs": 53050,
+                "lhrs_offset": 15.2,
+                "deciever_installed": "NULL",
+                "id": 51
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.6157,
+                    45.437167
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": null,
+                "activity": null,
+                "highway": null,
+                "mileage_marker": null,
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": null,
+                "id": 284
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.43855,
+                    46.251051
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 518W",
+                "activity": "Inactive",
+                "highway": "Hwy 518 W",
+                "mileage_marker": "McMurr/ Mont",
+                "lhrs": 53040,
+                "lhrs_offset": 4.1,
+                "deciever_installed": "NULL",
+                "id": 52
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.386317,
+                    45.528267
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 518W",
+                "activity": "Active",
+                "highway": "Hwy 518 W",
+                "mileage_marker": "McMurr/ Mont",
+                "lhrs": 53040,
+                "lhrs_offset": 8.6,
+                "deciever_installed": "NULL",
+                "id": 53
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.424667,
+                    45.4985
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 518W",
+                "activity": "Inactive",
+                "highway": "Hwy 518 W",
+                "mileage_marker": "McMurr/ Mont",
+                "lhrs": 53050,
+                "lhrs_offset": 3.23,
+                "deciever_installed": "NULL",
+                "id": 54
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.500067,
+                    45.477583
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 518W",
+                "activity": "Active",
+                "highway": "Hwy 518 W",
+                "mileage_marker": "McMurr/ Mont",
+                "lhrs": 53050,
+                "lhrs_offset": 12.2,
+                "deciever_installed": "NULL",
+                "id": 55
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.5987,
+                    45.454033
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 518W",
+                "activity": "Active",
+                "highway": "Hwy 518 W",
+                "mileage_marker": "McMurr/ Mont",
+                "lhrs": 53050,
+                "lhrs_offset": 14,
+                "deciever_installed": "NULL",
+                "id": 56
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.6132,
+                    45.440467
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 518W",
+                "activity": "Inactive",
+                "highway": "Hwy 518 W",
+                "mileage_marker": "McMurr/ Mont",
+                "lhrs": 53050,
+                "lhrs_offset": 17.6,
+                "deciever_installed": "NULL",
+                "id": 57
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.647433,
+                    45.4294
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 518W",
+                "activity": "Active",
+                "highway": "Hwy 518 W",
+                "mileage_marker": "McMurr/ Mont",
+                "lhrs": 53050,
+                "lhrs_offset": 15.7,
+                "deciever_installed": "NULL",
+                "id": 58
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.624733,
+                    45.4325
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 518W",
+                "activity": "Inactive",
+                "highway": "Hwy 518 W",
+                "mileage_marker": "McMurr/ Mont",
+                "lhrs": 53050,
+                "lhrs_offset": 16.2,
+                "deciever_installed": "NULL",
+                "id": 59
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.630633,
+                    45.432533
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 518W",
+                "activity": "Active",
+                "highway": "Hwy 518 W",
+                "mileage_marker": "McMurr/ Mont",
+                "lhrs": 53050,
+                "lhrs_offset": 1.11,
+                "deciever_installed": "NULL",
+                "id": 60
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.476383,
+                    45.486083
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 592",
+                "activity": "Active",
+                "highway": "Hwy 592",
+                "mileage_marker": "Perry",
+                "lhrs": 62600,
+                "lhrs_offset": 11.1,
+                "deciever_installed": "NULL",
+                "id": 61
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.304,
+                    45.520317
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT5 592",
+                "activity": "Active",
+                "highway": "Hwy 592",
+                "mileage_marker": "Perry",
+                "lhrs": 62600,
+                "lhrs_offset": 1.969,
+                "deciever_installed": "NULL",
+                "id": 62
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.249733,
+                    45.460117
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT6 35",
+                "activity": "NULL",
+                "highway": 35,
+                "mileage_marker": 0,
+                "lhrs": 28000,
+                "lhrs_offset": 2.6,
+                "deciever_installed": "YES",
+                "id": 63
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.872673,
+                    45.2022
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT7 35",
+                "activity": "NULL",
+                "highway": 35,
+                "mileage_marker": 0,
+                "lhrs": 27950,
+                "lhrs_offset": 8.4,
+                "deciever_installed": "YES",
+                "id": 64
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.79185,
+                    45.034474
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT7 118",
+                "activity": "NULL",
+                "highway": 118,
+                "mileage_marker": 0,
+                "lhrs": 42720,
+                "lhrs_offset": 4.6,
+                "deciever_installed": "YES",
+                "id": 65
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.743439,
+                    45.031419
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT7 118",
+                "activity": "NULL",
+                "highway": 118,
+                "mileage_marker": 0,
+                "lhrs": 42720,
+                "lhrs_offset": 4.8,
+                "deciever_installed": "YES",
+                "id": 66
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.748095,
+                    45.032053
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT7 118",
+                "activity": "NULL",
+                "highway": 118,
+                "mileage_marker": 0,
+                "lhrs": 42720,
+                "lhrs_offset": 7.8,
+                "deciever_installed": "YES",
+                "id": 67
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.784621,
+                    45.031686
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT7 118",
+                "activity": "NULL",
+                "highway": 118,
+                "mileage_marker": 0,
+                "lhrs": 42720,
+                "lhrs_offset": 8.5,
+                "deciever_installed": "YES",
+                "id": 68
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.791866,
+                    45.034684
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT7 118",
+                "activity": "NULL",
+                "highway": 118,
+                "mileage_marker": 0,
+                "lhrs": 42720,
+                "lhrs_offset": 9.7,
+                "deciever_installed": "YES",
+                "id": 69
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.804406,
+                    45.040711
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT8 124",
+                "activity": "Active",
+                "highway": "Hwy 124",
+                "mileage_marker": "Hagerman",
+                "lhrs": 43720,
+                "lhrs_offset": 1.4,
+                "deciever_installed": "NULL",
+                "id": 70
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.827167,
+                    45.653433
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT8 124",
+                "activity": "Active",
+                "highway": "Hwy 124",
+                "mileage_marker": "Croft",
+                "lhrs": 43720,
+                "lhrs_offset": 2.9,
+                "deciever_installed": "NULL",
+                "id": 71
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.808733,
+                    45.658617
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT8 124",
+                "activity": "Active",
+                "highway": "Hwy 124",
+                "mileage_marker": "Croft",
+                "lhrs": 43720,
+                "lhrs_offset": 10.5,
+                "deciever_installed": "NULL",
+                "id": 72
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.719383,
+                    45.667267
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT8 124",
+                "activity": "Active",
+                "highway": "Hwy 124",
+                "mileage_marker": "Chapman",
+                "lhrs": 43740,
+                "lhrs_offset": 11.1,
+                "deciever_installed": "NULL",
+                "id": 73
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.512833,
+                    45.727617
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT8 124",
+                "activity": "Active",
+                "highway": "Hwy 124",
+                "mileage_marker": "McDougall",
+                "lhrs": 43705,
+                "lhrs_offset": 6.9,
+                "deciever_installed": "NULL",
+                "id": 74
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.026217,
+                    45.430733
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT8 124",
+                "activity": "Active",
+                "highway": "Hwy 124",
+                "mileage_marker": "McDougall",
+                "lhrs": 43705,
+                "lhrs_offset": 8.2,
+                "deciever_installed": "NULL",
+                "id": 75
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.023,
+                    45.440667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT8 124",
+                "activity": "Active",
+                "highway": "Hwy 124",
+                "mileage_marker": "McKellar",
+                "lhrs": 43710,
+                "lhrs_offset": 2.8,
+                "deciever_installed": "NULL",
+                "id": 76
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.9244,
+                    45.5332
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT8 124",
+                "activity": "Active",
+                "highway": "Hwy 124",
+                "mileage_marker": "Hagerman",
+                "lhrs": 43710,
+                "lhrs_offset": 4.6,
+                "deciever_installed": "NULL",
+                "id": 77
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.912733,
+                    45.912733
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT8 124",
+                "activity": "Active",
+                "highway": "Hwy 124",
+                "mileage_marker": "Hagerman",
+                "lhrs": 43710,
+                "lhrs_offset": 8.3,
+                "deciever_installed": "NULL",
+                "id": 78
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.912733,
+                    45.58135
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT8 124",
+                "activity": "Active",
+                "highway": "Hwy 124",
+                "mileage_marker": "Chapman",
+                "lhrs": 43750,
+                "lhrs_offset": 9,
+                "deciever_installed": "NULL",
+                "id": 79
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.532067,
+                    45.715933
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT8 520N",
+                "activity": "Active",
+                "highway": "Hwy 520 N",
+                "mileage_marker": "Whitestone",
+                "lhrs": 53440,
+                "lhrs_offset": 20.7,
+                "deciever_installed": "NULL",
+                "id": 80
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.0444,
+                    45.652767
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT8 520S",
+                "activity": "Active",
+                "highway": "Hwy 520 South",
+                "mileage_marker": "Ryerson",
+                "lhrs": 53410,
+                "lhrs_offset": 2.3,
+                "deciever_installed": "NULL",
+                "id": 81
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.564933,
+                    45.654967
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "New installations",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "161.0 S/B",
+                "lhrs": 46972,
+                "lhrs_offset": 5.1,
+                "deciever_installed": "YES/NEW",
+                "id": 82
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.736317,
+                    44.848033
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "New installations",
+                "activity": "NULL",
+                "highway": 400,
+                "mileage_marker": "159.2 S/B",
+                "lhrs": 46972,
+                "lhrs_offset": 3.3,
+                "deciever_installed": "YES/NEW",
+                "id": 83
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.7382,
+                    44.832067
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "New installations",
+                "activity": "NULL",
+                "highway": 69,
+                "mileage_marker": "4.1 S/B(SHAWS)",
+                "lhrs": 35290,
+                "lhrs_offset": 4.1,
+                "deciever_installed": "YES/NEW",
+                "id": 84
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.757867,
+                    45.115433
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "New installations",
+                "activity": "NULL",
+                "highway": 141,
+                "mileage_marker": "41.9 E/B",
+                "lhrs": 45790,
+                "lhrs_offset": 9.3,
+                "deciever_installed": "YES/NEW",
+                "id": 85
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.751067,
+                    45.287817
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "New installations",
+                "activity": "NULL",
+                "highway": 141,
+                "mileage_marker": "47.2 E/B",
+                "lhrs": 45790,
+                "lhrs_offset": 14.6,
+                "deciever_installed": "YES/NEW",
+                "id": 86
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.803617,
+                    45.2877
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "New installations",
+                "activity": "NULL",
+                "highway": 7909,
+                "mileage_marker": "CIL",
+                "lhrs": 98105,
+                "lhrs_offset": 1.1,
+                "deciever_installed": "YES/NEW",
+                "id": 87
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.1037,
+                    45.421967
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "New installations",
+                "activity": "NULL",
+                "highway": 118,
+                "mileage_marker": 0,
+                "lhrs": 42720,
+                "lhrs_offset": 4.4,
+                "deciever_installed": "YES/NEW",
+                "id": 88
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.743433,
+                    45.033767
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "New installations",
+                "activity": "NULL",
+                "highway": 118,
+                "mileage_marker": 0,
+                "lhrs": 42720,
+                "lhrs_offset": 4.5,
+                "deciever_installed": "YES/NEW",
+                "id": 89
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.745567,
+                    45.033217
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "New installations",
+                "activity": "NULL",
+                "highway": 118,
+                "mileage_marker": 0,
+                "lhrs": 42720,
+                "lhrs_offset": 4.8,
+                "deciever_installed": "YES/NEW",
+                "id": 90
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.749017,
+                    45.03245
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "New installations",
+                "activity": "NULL",
+                "highway": 118,
+                "mileage_marker": 0,
+                "lhrs": 42720,
+                "lhrs_offset": 7.8,
+                "deciever_installed": "YES/NEW",
+                "id": 91
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.734867,
+                    45.0321
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "New installations",
+                "activity": "NULL",
+                "highway": 118,
+                "mileage_marker": 0,
+                "lhrs": 42720,
+                "lhrs_offset": 8.4,
+                "deciever_installed": "YES/NEW",
+                "id": 92
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.791633,
+                    45.034867
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "New installations",
+                "activity": "NULL",
+                "highway": 118,
+                "mileage_marker": 0,
+                "lhrs": 42720,
+                "lhrs_offset": 9.7,
+                "deciever_installed": "YES/NEW",
+                "id": 93
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.806083,
+                    45.04075
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "New installations",
+                "activity": "NULL",
+                "highway": 60,
+                "mileage_marker": 0,
+                "lhrs": 33333,
+                "lhrs_offset": 1.5,
+                "deciever_installed": "YES/NEW",
+                "id": 94
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.875983,
+                    45.40485
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "PAT4 11",
+                "activity": "Inactive",
+                "highway": "Hwy 11 N/B",
+                "mileage_marker": "McCauley",
+                "lhrs": 17060,
+                "lhrs_offset": 5.7,
+                "deciever_installed": null,
+                "id": 37
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.31085,
+                    45.137433
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D1",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 189
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.483597,
+                    45.742952
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D10",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 190
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.507509,
+                    45.731177
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D11",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 191
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.508473,
+                    45.732594
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D12",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 192
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.501927,
+                    45.766246
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D13",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 193
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.567387,
+                    45.865979
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D14",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 194
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.569037,
+                    45.870828
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D15",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 195
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.144707,
+                    45.987651
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D16",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 196
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.08623,
+                    46.107588
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D17",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 197
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.455744,
+                    45.656541
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D18",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 198
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.217676,
+                    45.912075
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D19",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 199
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.775766,
+                    46.216734
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D2",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 200
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.467437,
+                    45.717433
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D20",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "Gauthier Rd",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 201
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.623784,
+                    46.053864
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D21",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "E/RR tracks",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 202
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.522033,
+                    45.911584
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D23",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 203
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.623694,
+                    46.053801
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D24",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 204
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.899072,
+                    46.170802
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D25",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "Gauthiers Rd",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 205
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.660626,
+                    46.094022
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D26",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "1km N/ Harris Lake Rd",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 206
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.455387,
+                    45.699968
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D27",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "0.5km N/Harris Lake Rd",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 207
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.452063,
+                    45.694381
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D28",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "S/Pickeral River Brdge",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 208
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.56903,
+                    45.98832
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D3",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 209
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.4431,
+                    45.678649
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D30",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "1.9 km W/529",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 210
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.441077,
+                    45.649665
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D31",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "3.9 km from jct 529A",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 211
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.460204,
+                    45.658515
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D32",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 212
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.460204,
+                    45.658515
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D33",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 213
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.467171,
+                    45.719754
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D34",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 214
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.798204,
+                    46.306685
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D35",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "West of Lost Channel",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 215
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.569613,
+                    45.908065
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D36",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 216
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.625324,
+                    46.05746
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D37",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "0.7 W Wolfe Lake",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 217
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.867134,
+                    46.178554
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D38",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "0.9 km E Bell Lake",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 218
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.156542,
+                    46.079766
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D39",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "8.6 km  E Wolfe Creek",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 219
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.983115,
+                    46.144664
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D4",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 220
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.514316,
+                    45.75387
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D40",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "2.4 km E Es. Norrows",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 221
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.219387,
+                    45.912347
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D41",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "0.6 km N of S end of patrol",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 222
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.340043,
+                    45.571547
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D42",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "1.6km North",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 223
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.477374,
+                    45.685193
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D43",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "2.2km North",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 224
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.480584,
+                    45.689465
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D44",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "N 0.8 km N Hwy 637",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 225
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.787684,
+                    46.232876
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D45",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 226
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.462349,
+                    45.630172
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D46",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "5.2 km E of Hwy 69",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 227
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.506885,
+                    45.908396
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D47",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "0.1 km N of 645 First Nations",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 228
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.513116,
+                    45.758806
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D48",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "3.9 km S of 645 First Nations",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 229
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.513172,
+                    45.728627
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D49",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "1.2 km S of 529 Mag. First Nation",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 230
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.49318,
+                    45.760753
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D5",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 231
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.460454,
+                    45.656563
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D50",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "4.4 km W of park's east boundary",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 232
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.352821,
+                    46.025804
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D51",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "2.5 km North of Hwy 637",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 233
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.787347,
+                    46.232875
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D52",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "4.8 km West of 7299",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 234
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.815453,
+                    46.197437
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D53",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "19.8 kmW/ of Mahzenazing River",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 235
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.350826,
+                    46.027124
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D55",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "12.2 km West of Hwy 69",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 236
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.898813,
+                    46.170802
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D56",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "9.8 km West of Hwy 69",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 237
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.88504,
+                    46.178385
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D57",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "across from Rutter",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 238
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.663766,
+                    46.098776
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D58",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "3.5 km South of Key River",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 239
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.567368,
+                    45.868388
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D59",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "1.6 km North of Naiscoot",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 240
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.477297,
+                    45.68517
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D6",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 241
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.440039,
+                    45.646978
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D60",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "1.6 km South of Naiscoot",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 242
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.465926,
+                    45.662925
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D61",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "0.7 km West jct 527",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 243
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.456211,
+                    45.632151
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D62",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "1.7 km North of Hwy 69 Southend",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 244
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.401799,
+                    45.618935
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D63",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "7 km South of 529 Mag",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 245
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.467263,
+                    45.711338
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D64",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "and Beckanon Road",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 246
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.561659,
+                    45.852204
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D64A",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "and Beckanon Road #2",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 247
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.561659,
+                    45.852204
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D65",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "0.5 km West of Lost Channel",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 248
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.57348,
+                    45.90816
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D66",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "7.3 km East of Ess Narrows Birch Wood Trail",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 249
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.157685,
+                    45.89894
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D67",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "1.3 km East of RR tracks",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 250
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.507036,
+                    45.908753
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D68",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "5.5 km North of 64 Bott Construction",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 251
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.702118,
+                    46.150652
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D69",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "0.5 km South on First Nations",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 252
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.502079,
+                    45.767966
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D7",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 253
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.49339,
+                    45.758855
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D70",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "skidoo culvert",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 254
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.515176,
+                    45.757087
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D71",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 255
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.514209,
+                    45.755878
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D72",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "2.6 km South of Hwy 645 First Nations",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 256
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.508213,
+                    45.734433
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D73",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "1 km South of 529 First Nations",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 257
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.493309,
+                    45.760701
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D74",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "4.5 km South of 645 twin culverts First Nations",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 258
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.501529,
+                    45.72862
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": null,
+                "activity": null,
+                "highway": null,
+                "mileage_marker": null,
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": null,
+                "id": 285
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.435493,
+                    46.251495
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D75",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "3.5 km South 529 Mag",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 259
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.481218,
+                    45.74172
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D76",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "4.5 km South of 529 Mag",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 260
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.475605,
+                    45.732938
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D77",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "11.3 km South of 529 Mag Harris dump",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 261
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.438451,
+                    45.677392
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D78",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "ash swamp South of Pickerel passing lanes - 2 dams",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 262
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.580026,
+                    45.959981
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D8",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 263
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.501676,
+                    45.726579
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D80",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 264
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.761859,
+                    46.428258
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D81",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 265
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.740728,
+                    46.432596
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D83",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "1km South Hwy 529",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 266
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.467183,
+                    45.719745
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D84",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "North of Twin Culverts FN",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 267
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.505902,
+                    45.731215
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D85",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "2.2 km South of Hwy 69 Large Culvert FN",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 268
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.509839,
+                    45.736596
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D86",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "Southend of patrol Carrillion turn around",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 269
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.335332,
+                    45.56994
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D87",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "twin culverts",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 270
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.200595,
+                    45.910933
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D88",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "Burwash Farm Rd - 4km N/ 637",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 271
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.814068,
+                    46.251129
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D89",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "twin culverts",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 272
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.200915,
+                    45.911061
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D9",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "NULL",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 273
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.506942,
+                    45.639167
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D90",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "8 km E/69 - 2 dams",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 274
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.465991,
+                    45.906379
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D91",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "12.6km W/Burwash",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 275
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.899043,
+                    46.170637
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D92",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "1.6 km S/529 Mag",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 276
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.493371,
+                    45.76025
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D93",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "2.9 km N/529",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 277
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.54498,
+                    45.763627
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D94",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "twin culverts",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 278
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.500289,
+                    45.728049
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D95",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "2 km N/529A",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 279
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.443969,
+                    45.655098
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D96",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "17 km W/69",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 280
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.946228,
+                    46.15746
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D97",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "S/ Hwy 64",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 281
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.666938,
+                    46.103496
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "patrol": "D98",
+                "activity": "NULL",
+                "highway": "NULL",
+                "mileage_marker": "W/Crossroads (Hlfway) Site 5",
+                "lhrs": "NULL",
+                "lhrs_offset": "NULL",
+                "deciever_installed": "NULL",
+                "id": 282
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.440426,
+                    45.906476
+                ]
+            }
+        }
+    ]
+}
