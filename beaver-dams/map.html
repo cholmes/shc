@@ -220,6 +220,8 @@
                 document.querySelector('#basemap-quarter option[value="3"]').disabled = false;
                 document.querySelector('#basemap-quarter option[value="4"]').disabled = false;
             }
+            
+            updateUrlHash();
         }
 
         // Function to set the map URL
@@ -240,13 +242,44 @@
             overlayLayer.setOpacity(opacity);
         }
 
+        // Function to update the URL hash with the current view and settings
+        function updateUrlHash() {
+            const view = map.getView();
+            const center = ol.proj.toLonLat(view.getCenter());
+            const zoom = view.getZoom().toFixed(2);
+            const basemapYear = document.getElementById('basemap-year').value;
+            const basemapQuarter = document.getElementById('basemap-quarter').value;
+            const opacity = document.getElementById('opacity').value;
+            const hash = `#${center[0].toFixed(6)},${center[1].toFixed(6)},${zoom},${basemapYear},${basemapQuarter},${opacity}`;
+            location.hash = hash;
+        }
+
+        // Function to parse the URL hash and apply the settings
+        function parseUrlHash() {
+            if (location.hash) {
+                const [lon, lat, zoom, basemapYear, basemapQuarter, opacity] = location.hash.slice(1).split(',');
+                map.getView().setCenter(ol.proj.fromLonLat([parseFloat(lon), parseFloat(lat)]));
+                map.getView().setZoom(parseInt(zoom));
+                document.getElementById('basemap-year').value = basemapYear;
+                document.getElementById('basemap-quarter').value = basemapQuarter;
+                document.getElementById('opacity').value = opacity;
+                updateBasemapLayer();
+                updateOpacity();
+            }
+        }
+
         // Add event listeners to update basemap layer, overlay layer, and opacity
         document.getElementById('basemap-year').addEventListener('change', updateBasemapLayer);
         document.getElementById('basemap-quarter').addEventListener('change', updateBasemapLayer);
         document.getElementById('opacity').addEventListener('input', updateOpacity);
         document.getElementById('submit-api-key').addEventListener('click', handleApiKeySubmit);
         document.getElementById('cancel-api-key').addEventListener('click', hideApiKeyPopup);
+
+        // Add event listener to update the URL hash when the map view changes
+        map.getView().on('change', updateUrlHash);
+        
+        // Parse the URL hash when the page loads
+        window.addEventListener('load', parseUrlHash);
     </script>
 </body>
-
 </html>
