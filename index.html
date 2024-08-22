@@ -13,48 +13,79 @@
         .layer-info { margin-top: 20px; }
         .layer { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; cursor: pointer; }
         .layer:hover { background-color: #f0f0f0; }
-        .layer h3 { margin-top: 0; }
+        .layer.selected { background-color: #d0d0d0; border-color: #888; }
         .map-link, .generated-urls { margin-top: 20px; }
+        .loading { font-style: italic; color: #666; }
+        .error { color: red; font-weight: bold; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="input-group">
-            <label for="id">ID:</label>
+            <label for="id">Sentinel Hub Configuration ID:</label>
             <input type="text" id="id" placeholder="Enter ID" oninput="getLayers()">
         </div>
         <div class="layer-info" id="layerInfo"></div>
         <div id="mapLink" class="map-link"></div>
-        <div id="generatedUrls" class="generated-urls"></div> <!-- Placeholder for generated URLs -->
+        <div id="generatedUrls" class="generated-urls"></div>
     </div>
 
     <script>
         function generateUrl(identifier) {
             const id = document.getElementById('id').value.trim();
-            const baseUrl = "https://services.sentinel-hub.com/ogc/wmts/";
+            const baseUrl = "https://services-uswest2.sentinel-hub.com/ogc/wmts/";
             const parameters = `?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=${encodeURIComponent(identifier)}&STYLE=default&FORMAT=image%2Fpng&TILEMATRIXSET=PopularWebMercator256&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}`;
             const fullUrl = baseUrl + id + parameters;
 
+            // Clear any existing URLs
+            const generatedUrlsDiv = document.getElementById('generatedUrls');
+            generatedUrlsDiv.innerHTML = '';
+
+            // Add the new URL
             const urlElement = document.createElement('div');
             urlElement.innerHTML = `<a href="${fullUrl}" target="_blank">${fullUrl}</a>`;
-            document.getElementById('generatedUrls').appendChild(urlElement);
+            generatedUrlsDiv.appendChild(urlElement);
+
+            return fullUrl; // Return the generated URL
         }
 
         function getLayers() {
             const id = document.getElementById('id').value.trim();
+
+            // Clear previous data
+            const layerInfoDiv = document.getElementById('layerInfo');
+            const mapLinkDiv = document.getElementById('mapLink');
+            const generatedUrlsDiv = document.getElementById('generatedUrls');
+            layerInfoDiv.innerHTML = '';
+            mapLinkDiv.innerHTML = '';
+            generatedUrlsDiv.innerHTML = '';
+
             if (!id) {
-                document.getElementById('layerInfo').innerHTML = 'Please enter an ID.';
+                layerInfoDiv.innerHTML = 'Please enter an ID.';
                 return;
             }
+
+            // Display loading indicator
+            layerInfoDiv.innerHTML = '<p class="loading">Loading...</p>';
+
             const url = `https://services-uswest2.sentinel-hub.com/ogc/wmts/${id}?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetCapabilities`;
 
             fetch(url)
                 .then(response => response.text())
-                .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
-                .then(data => {
-                    const layers = data.querySelectorAll('Layer');
-                    const layerInfoDiv = document.getElementById('layerInfo');
-                    layerInfoDiv.innerHTML = ''; // Clear previous results
+                .then(str => {
+                    // Parse the response
+                    const parser = new window.DOMParser();
+                    const xmlDoc = parser.parseFromString(str, "text/xml");
+
+                    // Check for an exception report
+                    const exceptionText = xmlDoc.querySelector('ows\\:ExceptionText, ExceptionText');
+                    if (exceptionText) {
+                        throw new Error(exceptionText.textContent);
+                    }
+
+                    // Otherwise, proceed to parse layers
+                    const layers = xmlDoc.querySelectorAll('Layer');
+                    layerInfoDiv.innerHTML = ''; // Clear loading indicator
 
                     layers.forEach(layer => {
                         const title = layer.querySelector('Title').textContent;
@@ -65,16 +96,29 @@
                         layerDiv.className = 'layer';
                         layerDiv.innerHTML = `<h3>${title}</h3><p>${abstract}</p>`;
                         layerDiv.onclick = function() {
-                            generateUrl(identifier);
-                            displayMapLink(layer);
+                            selectLayer(layerDiv, layer);
                         };
                         layerInfoDiv.appendChild(layerDiv);
                     });
                 })
                 .catch(error => {
                     console.error('Error fetching or parsing:', error);
-                    document.getElementById('layerInfo').innerHTML = 'Error fetching layer information.';
+                    layerInfoDiv.innerHTML = `<p class="error">Error: ${error.message}</p>`;
                 });
+        }
+
+        function selectLayer(layerDiv, layer) {
+            // Clear previously selected layer's style
+            const previousSelectedLayer = document.querySelector('.layer.selected');
+            if (previousSelectedLayer) {
+                previousSelectedLayer.classList.remove('selected');
+            }
+
+            // Set the selected style to the clicked layer
+            layerDiv.classList.add('selected');
+
+            // Display the map link and generated URL
+            displayMapLink(layer);
         }
 
         function displayMapLink(layer) {
@@ -84,13 +128,16 @@
             const lat = (parseFloat(lowerCorner[0]) + parseFloat(upperCorner[0])) / 2;
             const lon = (parseFloat(lowerCorner[1]) + parseFloat(upperCorner[1])) / 2;
             const zoom = 13.4; // This is a static zoom level; adjust as needed for your use case
+            const identifier = layer.querySelector('Identifier').textContent;
+            const layerUrl = generateUrl(identifier); // Get the generated layer URL
 
+            // Clear any existing map link
             const mapLinkDiv = document.getElementById('mapLink');
-            mapLinkDiv.innerHTML = `<a href="https://felt.com/map/new?lat=${lat}&lon=${lon}&zoom=${zoom}" target="_blank">View on Map</a>`;
-        }
+            mapLinkDiv.innerHTML = '';
 
-        // Initial call to getLayers when the page loads with an ID, if needed
-        // window.onload = getLayers; // Uncomment this line if you want to automatically load layers when the page loads with a predefined ID.
+            // Add the new map link
+            mapLinkDiv.innerHTML = `<a href="https://felt.com/map/new?lat=${lat}&lon=${lon}&zoom=${zoom}&layer_urls[]=${encodeURIComponent(layerUrl)}" target="_blank">Open in Felt</a>`;
+        }
     </script>
 </body>
 </html>
