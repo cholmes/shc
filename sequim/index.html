@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenLayers Map with Layer Selector</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css">
+    <style>
+        html, body, #map {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .layer-selector {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div id="map" class="map"></div>
+    <div class="layer-selector">
+        <label for="layer-select">Select Layer:</label>
+        <select id="layer-select">
+            <option value="truecolor">True Color</option>
+            <option value="ndvi">NDVI</option>
+            <option value="ndwi">NDWI</option>
+        </select>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/ol/dist/ol.js"></script>
+    <script>
+        // Parse URL hash
+        function parseHash() {
+            const hash = window.location.hash.replace('#', '');
+            const parts = hash.split('/');
+            if (parts.length === 3) {
+                return {
+                    zoom: parseInt(parts[0], 10),
+                    lat: parseFloat(parts[1]),
+                    lon: parseFloat(parts[2])
+                };
+            }
+            return null;
+        }
+
+        // Update URL hash
+        function updateHash(view) {
+            const zoom = view.getZoom();
+            const center = ol.proj.toLonLat(view.getCenter());
+            const hash = `${zoom}/${center[1].toFixed(4)}/${center[0].toFixed(4)}`;
+            window.location.hash = hash;
+        }
+
+        // Define the Carto baselayer
+        const cartoBaseLayer = new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                url: 'https://{a-d}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png'
+            })
+        });
+
+        // Initialize map
+        const initialState = parseHash() || { zoom: 13.526666666666666, lat: 48.1292, lon: -123.1346 };
+        const map = new ol.Map({
+            target: 'map',
+            layers: [cartoBaseLayer], // Add the Carto baselayer here
+            view: new ol.View({
+                center: ol.proj.fromLonLat([initialState.lon, initialState.lat]),
+                zoom: initialState.zoom
+            })
+        });
+
+        // Define layers
+        const trueColorLayer = new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                url: 'https://services.sentinel-hub.com/ogc/wmts/e584849a-8729-4a4f-ab35-be5120a10e3b?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=1_TRUE-COLOR&STYLE=default&FORMAT=image%2Fpng&TILEMATRIXSET=PopularWebMercator256&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}'
+            })
+        });
+
+        const ndviLayer = new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                url: 'https://services.sentinel-hub.com/ogc/wmts/e584849a-8729-4a4f-ab35-be5120a10e3b?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=3_NDVI&STYLE=default&FORMAT=image%2Fpng&TILEMATRIXSET=PopularWebMercator256&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}'
+            })
+        });
+
+        const ndwiLayer = new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                url: 'https://services.sentinel-hub.com/ogc/wmts/e584849a-8729-4a4f-ab35-be5120a10e3b?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=4_NDWI&STYLE=default&FORMAT=image%2Fpng&TILEMATRIXSET=PopularWebMercator256&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}'
+            })
+        });
+
+        // Add initial layer
+        map.addLayer(trueColorLayer);
+
+        // Layer selector event listener
+        document.getElementById('layer-select').addEventListener('change', function() {
+            const selectedLayer = this.value;
+            map.getLayers().clear();
+            map.addLayer(cartoBaseLayer); // Ensure the Carto baselayer is always added
+            if (selectedLayer === 'truecolor') {
+                map.addLayer(trueColorLayer);
+            } else if (selectedLayer === 'ndvi') {
+                map.addLayer(ndviLayer);
+            } else if (selectedLayer === 'ndwi') {
+                map.addLayer(ndwiLayer);
+            }
+        });
+
+        // Update URL hash on view change
+        map.getView().on('change', function() {
+            updateHash(map.getView());
+        });
+
+        // Update URL hash on map move end
+        map.on('moveend', function() {
+            updateHash(map.getView());
+        });
+    </script>
+</body>
+</html>
