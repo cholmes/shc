@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fast Tile Color Filtering with OpenLayers and WebGL</title>
+  <!-- Include the full OpenLayers build -->
+  <script src="https://cdn.jsdelivr.net/npm/ol@7.3.0/dist/ol.js"></script>
+  <style>
+    #map {
+      width: 100%;
+      height: 90vh;
+    }
+    #controls {
+      padding: 10px;
+      background-color: #f0f0f0;
+    }
+    #controls label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .ol-attribution {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div id="controls">
+    <label><input type="checkbox" id="color1" checked> Color 1 (243, 95, 74)</label>
+    <label><input type="checkbox" id="color2" checked> Color 2 (198, 43, 91)</label>
+    <label><input type="checkbox" id="color3" checked> Color 3 (132, 24, 109)</label>
+    <label><input type="checkbox" id="color4" checked> Color 4 (252, 172, 109)</label>
+    <label><input type="checkbox" id="color5" checked> Color 5 (75, 0, 108)</label>
+  </div>
+  <script>
+    // Define the colors and their corresponding IDs
+    const colorList = [
+      { id: 'color1', color: [243, 95, 74, 255] },   // Color 1
+      { id: 'color2', color: [198, 43, 91, 255] },   // Color 2
+      { id: 'color3', color: [132, 24, 109, 255] },  // Color 3
+      { id: 'color4', color: [252, 172, 109, 255] }, // Color 4
+      { id: 'color5', color: [75, 0, 108, 255] }     // Color 5
+    ];
+
+    // Convert colors to 0.0 - 1.0 range
+    function normalizeColor(color) {
+      return color.map(function(value) {
+        return value / 255;
+      });
+    }
+
+    const normalizedColors = colorList.map(function(item) {
+      return { id: item.id, color: normalizeColor(item.color) };
+    });
+
+    // Get user-selected colors as booleans
+    function getUserSelectedColors() {
+      const selected = {};
+      normalizedColors.forEach(function(item, index) {
+        selected['showColor' + (index + 1)] = document.getElementById(item.id).checked;
+      });
+      return selected;
+    }
+
+    // Create the CartoDB Dark Matter base map layer
+    const darkMatterLayer = new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        url: 'https://{a-c}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
+        attributions: '© <a href="https://carto.com/attributions">CARTO</a>',
+      })
+    });
+
+    // Create the WebGL tile layer with custom shaders
+    const customTileLayer = new ol.layer.WebGLTile({
+      source: new ol.source.XYZ({
+        url: 'https://tileserver-activity.s3.us-west-2.amazonaws.com/planet_deforestation/v2_final_20240918/{z}/{x}/{y}.png',
+        crossOrigin: 'anonymous' // Ensure CORS is set up properly
+      }),
+      style: {
+        variables: {
+          // Initialize variables for user selections
+          showColor1: true,
+          showColor2: true,
+          showColor3: true,
+          showColor4: true,
+          showColor5: true,
+          // Color values
+          color1: normalizedColors[0].color,
+          color2: normalizedColors[1].color,
+          color3: normalizedColors[2].color,
+          color4: normalizedColors[3].color,
+          color5: normalizedColors[4].color,
+        },
+        // Vertex shader (standard)
+        vertexShader: `
+          varying vec2 v_texCoord;
+          void main() {
+            v_texCoord = texCoord;
+            gl_Position = projectionMatrix * vec4(position, 0.0, 1.0);
+          }
+        `,
+        // Fragment shader with color filtering
+        fragmentShader: `
+          precision mediump float;
+          uniform sampler2D u_texture;
+          varying vec2 v_texCoord;
+          uniform bool showColor1;
+          uniform bool showColor2;
+          uniform bool showColor3;
+          uniform bool showColor4;
+          uniform bool showColor5;
+          uniform vec4 color1;
+          uniform vec4 color2;
+          uniform vec4 color3;
+          uniform vec4 color4;
+          uniform vec4 color5;
+
+          void main() {
+            vec4 textureColor = texture2D(u_texture, v_texCoord);
+            bool match = false;
+
+            if (showColor1 && textureColor == color1) {
+              match = true;
+            } else if (showColor2 && textureColor == color2) {
+              match = true;
+            } else if (showColor3 && textureColor == color3) {
+              match = true;
+            } else if (showColor4 && textureColor == color4) {
+              match = true;
+            } else if (showColor5 && textureColor == color5) {
+              match = true;
+            }
+
+            if (match) {
+              gl_FragColor = textureColor;
+            } else {
+              discard;
+            }
+          }
+        `
+      }
+    });
+
+    // Create the map with both layers
+    const map = new ol.Map({
+      target: 'map',
+      layers: [
+        darkMatterLayer,
+        customTileLayer
+      ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([0, 0]),
+        zoom: 2
+      })
+    });
+
+    // Update the style variables when checkboxes change
+    document.querySelectorAll('input[type=checkbox]').forEach(function(checkbox, index) {
+      checkbox.addEventListener('change', function() {
+        const selectedColors = getUserSelectedColors();
+        customTileLayer.updateStyleVariables(selectedColors);
+      });
+    });
+
+    // Initial update of style variables
+    customTileLayer.updateStyleVariables(getUserSelectedColors());
+
+  </script>
+</body>
+</html>

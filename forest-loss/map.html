@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OpenLayers Map with Custom XYZ Layer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/openlayers/dist/ol.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://cdn.jsdelivr.net/npm/openlayers/dist/ol.js"></script>
+    <script>
+        // Create the CartoDB dark basemap layer
+        const cartoDarkLayer = new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                url: 'https://{1-4}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
+            })
+        });
+
+        // Create the custom XYZ tile layer
+        const customXYZLayer = new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                url: 'https://tileserver-activity.s3.us-west-2.amazonaws.com/planet_deforestation/v2_final_20240918/{z}/{x}/{y}.png'
+            })
+        });
+
+        // Initialize the map
+        const map = new ol.Map({
+            target: 'map',
+            layers: [
+                cartoDarkLayer,  // Base layer
+                customXYZLayer   // Overlay layer
+            ],
+            view: new ol.View({
+                center: ol.proj.fromLonLat([20.0, 0.0]), // Centered on Africa
+                zoom: 4
+            })
+        });
+    </script>
+</body>
+</html>
