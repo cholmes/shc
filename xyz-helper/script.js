@@ -1,4 +1,6 @@
 let baseUrl = "https://services.sentinel-hub.com/ogc/wmts/";
+let map = null;
+let xyzLayer = null;
 
 function toggleSettings() {
     const settings = document.getElementById('settings');
@@ -40,11 +42,19 @@ function getLayers() {
     const mapLinkDiv = document.getElementById('mapLink');
     const generatedUrlsDiv = document.getElementById('generatedUrls');
     const coordsDiv = document.getElementById('layerCoordinates');
+    const mapDiv = document.getElementById('map');
+    
     serviceTitleDiv.innerHTML = '';
     layerInfoDiv.innerHTML = '';
     mapLinkDiv.innerHTML = '';
     generatedUrlsDiv.innerHTML = '';
     coordsDiv.innerHTML = '';
+    mapDiv.style.display = 'none';
+    
+    if (map) {
+        map.setTarget(null);
+        map = null;
+    }
 
     if (!id) {
         layerInfoDiv.innerHTML = 'Please enter an ID.';
@@ -136,22 +146,67 @@ function calculateCenterAndZoom(layer) {
     return { lon, lat, zoom };
 }
 
+function initMap(center, zoom, xyzUrl) {
+    const mapContainer = document.getElementById('map');
+    mapContainer.style.display = 'block';
+    
+    // Convert from WGS84 [longitude, latitude] to Web Mercator [x, y]
+    const centerWebMercator = ol.proj.fromLonLat([center.lon, center.lat]);
+    
+    // Create Carto basemap layer (Voyager with labels)
+    const cartoLayer = new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+            attributions: '&copy; <a href="https://carto.com/attributions">CARTO</a>'
+        })
+    });
+    
+    // Create XYZ layer from the provided URL
+    xyzLayer = new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: xyzUrl
+        })
+    });
+    
+    // Initialize map
+    if (map) {
+        map.setTarget(null);
+    }
+    
+    map = new ol.Map({
+        target: 'map',
+        layers: [cartoLayer, xyzLayer],
+        view: new ol.View({
+            center: centerWebMercator,
+            zoom: zoom
+        })
+    });
+}
+
 function displayLayerCoordinates(layer) {
-    const { lon, lat, zoom } = calculateCenterAndZoom(layer);
+    const centerAndZoom = calculateCenterAndZoom(layer);
     const coordsDiv = document.getElementById('layerCoordinates');
     
     if (!coordsDiv) return;
     
-    coordsDiv.innerHTML = `<p>Center: ${lon.toFixed(6)}, ${lat.toFixed(6)} | Zoom: ${zoom}</p>`;
+    coordsDiv.innerHTML = `<p>Center: ${centerAndZoom.lon.toFixed(6)}, ${centerAndZoom.lat.toFixed(6)} | Zoom: ${centerAndZoom.zoom}</p>`;
+    
+    // Get the identifier and generate the XYZ URL
+    const identifier = layer.querySelector('Identifier').textContent;
+    const id = document.getElementById('id').value.trim();
+    const xyzUrl = getXYZUrl(id, identifier);
+    
+    // Initialize or update the map
+    initMap(centerAndZoom, centerAndZoom.zoom, xyzUrl);
 }
 
 function displayMapLink(layer) {
-    const { lon, lat, zoom } = calculateCenterAndZoom(layer);
+    const centerAndZoom = calculateCenterAndZoom(layer);
     const identifier = layer.querySelector('Identifier').textContent;
     const layerUrl = generateUrl(identifier);
 
     const mapLinkDiv = document.getElementById('mapLink');
     mapLinkDiv.innerHTML = '';
 
-    mapLinkDiv.innerHTML = `<a href="https://felt.com/map/new?lat=${lat}&lon=${lon}&zoom=${zoom}&layer_urls[]=${encodeURIComponent(layerUrl)}" target="_blank">Open in Felt</a>`;
+    mapLinkDiv.innerHTML = `<a href="https://felt.com/map/new?lat=${centerAndZoom.lat}&lon=${centerAndZoom.lon}&zoom=${centerAndZoom.zoom}&layer_urls[]=${encodeURIComponent(layerUrl)}" target="_blank">Open in Felt</a>`;
 }
