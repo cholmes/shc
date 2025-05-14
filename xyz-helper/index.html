@@ -8,23 +8,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.4.0/ol.css">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/ol@v7.4.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="container">
         <div class="input-group">
-            <label for="id">Sentinel Hub Configuration ID:</label>
+            <label for="id">Planet Insights Platform Configuration ID:</label>
             <input type="text" id="id" placeholder="Enter ID" oninput="getLayers()">
         </div>
+        <div id="configNameLabel" class="config-name-label" style="display:none;">Configuration Name</div>
         <div id="serviceTitle" class="service-title"></div>
         <div class="layer-info" id="layerInfo"></div>
         <div id="map" class="map-container"></div>
         <div id="layerCoordinates" class="layer-coordinates"></div>
-        <div id="mapLink" class="map-link"></div>
+        <div id="xyzTemplate" class="xyz-template"></div>
         <div id="generatedUrls" class="generated-urls"></div>
     </div>
 
     <div class="settings" id="settings">
-        <div class="settings-toggle" onclick="toggleSettings()">⚙️ Settings</div>
+        <div class="settings-toggle" onclick="toggleSettings()">⚙️</div>
         <div class="settings-content">
             <label>Select Service:</label>
             <label><input type="radio" name="service" value="services" checked onchange="updateBaseUrl()"> services</label>

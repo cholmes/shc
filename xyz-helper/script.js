@@ -39,17 +39,17 @@ function getLayers() {
 
     const serviceTitleDiv = document.getElementById('serviceTitle');
     const layerInfoDiv = document.getElementById('layerInfo');
-    const mapLinkDiv = document.getElementById('mapLink');
     const generatedUrlsDiv = document.getElementById('generatedUrls');
     const coordsDiv = document.getElementById('layerCoordinates');
     const mapDiv = document.getElementById('map');
+    const xyzDiv = document.getElementById('xyzTemplate');
     
     serviceTitleDiv.innerHTML = '';
     layerInfoDiv.innerHTML = '';
-    mapLinkDiv.innerHTML = '';
     generatedUrlsDiv.innerHTML = '';
     coordsDiv.innerHTML = '';
     mapDiv.style.display = 'none';
+    xyzDiv.innerHTML = '';
     
     if (map) {
         map.setTarget(null);
@@ -80,10 +80,20 @@ function getLayers() {
             if (titleElement) {
                 let serviceTitle = titleElement.textContent.replace('Sentinel Hub WMTS service - ', '');
                 serviceTitleDiv.innerHTML = `<h2>${serviceTitle}</h2>`;
+                document.getElementById('configNameLabel').style.display = '';
+            } else {
+                document.getElementById('configNameLabel').style.display = 'none';
             }
 
             const layers = xmlDoc.querySelectorAll('Layer');
             layerInfoDiv.innerHTML = '';
+
+            if (layers.length > 0) {
+                const labelDiv = document.createElement('div');
+                labelDiv.className = 'layer-list-label';
+                labelDiv.textContent = 'Available Layers';
+                layerInfoDiv.appendChild(labelDiv);
+            }
 
             layers.forEach(layer => {
                 const title = layer.querySelector('Title').textContent;
@@ -92,7 +102,11 @@ function getLayers() {
 
                 const layerDiv = document.createElement('div');
                 layerDiv.className = 'layer';
-                layerDiv.innerHTML = `<h3>${title}</h3><p>${abstract}</p>`;
+                if (title === abstract) {
+                    layerDiv.innerHTML = `<div class=\"layer-title\">${title}</div>`;
+                } else {
+                    layerDiv.innerHTML = `<div class=\"layer-title\">${title}</div><div class=\"layer-abstract\">${abstract}</div>`;
+                }
                 layerDiv.onclick = function() {
                     selectLayer(layerDiv, layer);
                 };
@@ -113,7 +127,7 @@ function selectLayer(layerDiv, layer) {
 
     layerDiv.classList.add('selected');
     displayLayerCoordinates(layer);
-    displayMapLink(layer);
+    displayXYZTemplate(layer);
 }
 
 function lonLatToXY(lon, lat) {
@@ -183,30 +197,38 @@ function initMap(center, zoom, xyzUrl) {
     });
 }
 
+function copyToClipboard(value) {
+    navigator.clipboard.writeText(value);
+}
+
 function displayLayerCoordinates(layer) {
     const centerAndZoom = calculateCenterAndZoom(layer);
     const coordsDiv = document.getElementById('layerCoordinates');
-    
     if (!coordsDiv) return;
-    
-    coordsDiv.innerHTML = `<p>Center: ${centerAndZoom.lon.toFixed(6)}, ${centerAndZoom.lat.toFixed(6)} | Zoom: ${centerAndZoom.zoom}</p>`;
-    
+    const centerStr = `${centerAndZoom.lon.toFixed(6)}, ${centerAndZoom.lat.toFixed(6)}`;
+    const zoomStr = `${centerAndZoom.zoom}`;
+    coordsDiv.innerHTML = `
+        <div>
+            <strong>Center:</strong> <span>${centerStr}</span>
+            <button class="copy-btn" onclick="copyToClipboard('${centerStr}')" title="Copy center"><i class='fa-solid fa-copy'></i></button>
+        </div>
+        <div>
+            <strong>Zoom:</strong> <span>${zoomStr}</span>
+            <button class="copy-btn" onclick="copyToClipboard('${zoomStr}')" title="Copy zoom"><i class='fa-solid fa-copy'></i></button>
+        </div>
+    `;
     // Get the identifier and generate the XYZ URL
     const identifier = layer.querySelector('Identifier').textContent;
     const id = document.getElementById('id').value.trim();
     const xyzUrl = getXYZUrl(id, identifier);
-    
     // Initialize or update the map
     initMap(centerAndZoom, centerAndZoom.zoom, xyzUrl);
 }
 
-function displayMapLink(layer) {
-    const centerAndZoom = calculateCenterAndZoom(layer);
+function displayXYZTemplate(layer) {
     const identifier = layer.querySelector('Identifier').textContent;
-    const layerUrl = generateUrl(identifier);
-
-    const mapLinkDiv = document.getElementById('mapLink');
-    mapLinkDiv.innerHTML = '';
-
-    mapLinkDiv.innerHTML = `<a href="https://felt.com/map/new?lat=${centerAndZoom.lat}&lon=${centerAndZoom.lon}&zoom=${centerAndZoom.zoom}&layer_urls[]=${encodeURIComponent(layerUrl)}" target="_blank">Open in Felt</a>`;
+    const id = document.getElementById('id').value.trim();
+    const xyzUrl = getXYZUrl(id, identifier);
+    const xyzDiv = document.getElementById('xyzTemplate');
+    xyzDiv.innerHTML = `<div><strong>XYZ template url:</strong> <span>${xyzUrl}</span><button class="copy-btn" onclick="copyToClipboard('${xyzUrl}')" title="Copy XYZ template"><i class='fa-solid fa-copy'></i></button></div>`;
 }
