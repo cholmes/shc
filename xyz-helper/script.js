@@ -2,6 +2,18 @@ let baseUrl = "https://services.sentinel-hub.com/ogc/wmts/";
 let map = null;
 let xyzLayer = null;
 
+// AI Code Generation Prompt Builder logic
+const mapLibrarySelect = document.getElementById('mapLibrary');
+const baseLayerSelect = document.getElementById('baseLayer');
+const libraryOptionsDiv = document.getElementById('librarySpecificOptions');
+const aiPromptText = document.getElementById('aiPromptText');
+
+let aiSelectedLayerData = {
+    xyz: 'https://services.sentinel-hub.com/ogc/wmts/e584849a-8729-4a4f-ab35-be5120a10e3b?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=3_NDVI&STYLE=default&FORMAT=image%2Fpng&TILEMATRIXSET=PopularWebMercator256&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}',
+    center: '-123.138018, 48.130306',
+    zoom: '13'
+};
+
 function toggleSettings() {
     const settings = document.getElementById('settings');
     settings.classList.toggle('expanded');
@@ -88,6 +100,16 @@ function getLayers() {
             const layers = xmlDoc.querySelectorAll('Layer');
             layerInfoDiv.innerHTML = '';
 
+            // Show the layer hint if there are layers
+            const layerHintDiv = document.getElementById('layerHint');
+            if (layers.length > 0) {
+                layerHintDiv.textContent = 'Click on a layer for more information';
+                layerHintDiv.style.display = '';
+            } else {
+                layerHintDiv.style.display = 'none';
+            }
+
+            // Only show the label if there are layers
             if (layers.length > 0) {
                 const labelDiv = document.createElement('div');
                 labelDiv.className = 'layer-list-label';
@@ -124,10 +146,24 @@ function selectLayer(layerDiv, layer) {
     if (previousSelectedLayer) {
         previousSelectedLayer.classList.remove('selected');
     }
-
     layerDiv.classList.add('selected');
+    // Hide the layer hint
+    document.getElementById('layerHint').style.display = 'none';
     displayLayerCoordinates(layer);
     displayXYZTemplate(layer);
+    // Update AI prompt builder values
+    const centerAndZoom = calculateCenterAndZoom(layer);
+    const identifier = layer.querySelector('Identifier').textContent;
+    const id = document.getElementById('id').value.trim();
+    const xyzUrl = getXYZUrl(id, identifier);
+    aiSelectedLayerData = {
+        xyz: xyzUrl,
+        center: `${centerAndZoom.lon.toFixed(6)}, ${centerAndZoom.lat.toFixed(6)}`,
+        zoom: `${centerAndZoom.zoom}`
+    };
+    updatePrompt();
+    // Show the AI prompt builder section
+    document.getElementById('aiPromptBuilder').style.display = 'block';
 }
 
 function lonLatToXY(lon, lat) {
@@ -232,3 +268,95 @@ function displayXYZTemplate(layer) {
     const xyzDiv = document.getElementById('xyzTemplate');
     xyzDiv.innerHTML = `<div><strong>XYZ template url:</strong> <span>${xyzUrl}</span><button class="copy-btn" onclick="copyToClipboard('${xyzUrl}')" title="Copy XYZ template"><i class='fa-solid fa-copy'></i></button></div>`;
 }
+
+function updateLibraryOptions() {
+    const lib = mapLibrarySelect.value;
+    let html = '';
+    // Layer selector and opacity control for all libraries
+    html += `<label><input type=\"checkbox\" id=\"layerSelector\" checked> Layer selector</label> `;
+    html += `<label><input type=\"checkbox\" id=\"opacityControl\"> Opacity control</label> `;
+    // Measure tool for all libraries
+    html += `<label><input type=\"checkbox\" id=\"measureTool\"> Measure tool</label>`;
+    html += `<div id=\"measureSubOptions\"></div>`;
+    if (lib === 'OpenLayers') {
+        html += `<label><input type=\"checkbox\" id=\"olPermalink\" checked> Shareable URL</label> `;
+    } else if (lib === 'MapLibre') {
+        html += `<label><input type=\"checkbox\" id=\"ml3d\"> 3D</label>`;
+    } else {
+        html += '<span style=\"color:#64748b;\">No extra options for Leaflet.</span>';
+    }
+    libraryOptionsDiv.innerHTML = html;
+    // Add event for measure tool to show/hide sub-options
+    const measureTool = document.getElementById('measureTool');
+    const measureSubOptions = document.getElementById('measureSubOptions');
+    function updateMeasureSubOptions() {
+        if (measureTool.checked) {
+            measureSubOptions.innerHTML = `<div class=\"measure-suboptions\"><label><input type=\"checkbox\" id=\"measurePolygon\" checked> Polygon</label><label><input type=\"checkbox\" id=\"measureLine\" checked> Line</label></div>`;
+        } else {
+            measureSubOptions.innerHTML = '';
+        }
+        // Add listeners for sub-options
+        document.getElementById('measurePolygon')?.addEventListener('change', updatePrompt);
+        document.getElementById('measureLine')?.addEventListener('change', updatePrompt);
+        updatePrompt();
+    }
+    measureTool.addEventListener('change', updateMeasureSubOptions);
+    updateMeasureSubOptions();
+}
+
+function getPromptText() {
+    const lib = mapLibrarySelect.value;
+    const base = baseLayerSelect.value;
+    const xyz = aiSelectedLayerData.xyz;
+    const center = aiSelectedLayerData.center;
+    const zoom = aiSelectedLayerData.zoom;
+    let opts = [];
+    let permalinkText = '';
+    if (lib === 'OpenLayers') {
+        if (document.getElementById('olPermalink')?.checked) permalinkText = 'with an auto-updating url hash for the map state';
+    } else if (lib === 'MapLibre') {
+        if (document.getElementById('ml3d')?.checked) opts.push('3D support');
+    }
+    if (document.getElementById('layerSelector')?.checked) opts.push('a layer selector');
+    if (document.getElementById('opacityControl')?.checked) opts.push('an opacity control');
+    if (document.getElementById('measureTool')?.checked) {
+        let measureTypes = [];
+        if (document.getElementById('measurePolygon')?.checked) measureTypes.push('polygon');
+        if (document.getElementById('measureLine')?.checked) measureTypes.push('line');
+        if (measureTypes.length) {
+            opts.push(`a measure tool (${measureTypes.join(' and ')})`);
+        } else {
+            opts.push('a measure tool');
+        }
+    }
+    let optStr = '';
+    if (permalinkText) {
+        optStr += ` ${permalinkText}`;
+    }
+    if (opts.length) {
+        optStr += (permalinkText ? ' and ' : ' with ') + opts.join(' and ');
+    }
+    return `Generate the code for a ${lib} map with an XYZ template of ${xyz} centered at ${center} at zoom level ${zoom} using ${base} as the base layer${optStr}.`;
+}
+
+function updatePrompt() {
+    aiPromptText.value = getPromptText();
+}
+
+mapLibrarySelect.addEventListener('change', () => {
+    updateLibraryOptions();
+    updatePrompt();
+    libraryOptionsDiv.querySelectorAll('input').forEach(input => input.addEventListener('change', updatePrompt));
+});
+baseLayerSelect.addEventListener('change', updatePrompt);
+
+// Initial setup
+updateLibraryOptions();
+libraryOptionsDiv.querySelectorAll('input').forEach(input => input.addEventListener('change', updatePrompt));
+updatePrompt();
+
+// Copy prompt button logic
+document.getElementById('copyPromptBtn').addEventListener('click', function() {
+    const prompt = document.getElementById('aiPromptText').value;
+    navigator.clipboard.writeText(prompt);
+});
