@@ -13,10 +13,14 @@ function updateBaseUrl() {
     getLayers();
 }
 
+function getXYZUrl(id, identifier) {
+    const parameters = `?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=${encodeURIComponent(identifier)}&STYLE=default&FORMAT=image%2Fpng&TILEMATRIXSET=PopularWebMercator256&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}`;
+    return baseUrl + id + parameters;
+}
+
 function generateUrl(identifier) {
     const id = document.getElementById('id').value.trim();
-    const parameters = `?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=${encodeURIComponent(identifier)}&STYLE=default&FORMAT=image%2Fpng&TILEMATRIXSET=PopularWebMercator256&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}`;
-    const fullUrl = baseUrl + id + parameters;
+    const fullUrl = getXYZUrl(id, identifier);
 
     const generatedUrlsDiv = document.getElementById('generatedUrls');
     generatedUrlsDiv.innerHTML = '';
@@ -35,10 +39,12 @@ function getLayers() {
     const layerInfoDiv = document.getElementById('layerInfo');
     const mapLinkDiv = document.getElementById('mapLink');
     const generatedUrlsDiv = document.getElementById('generatedUrls');
+    const coordsDiv = document.getElementById('layerCoordinates');
     serviceTitleDiv.innerHTML = '';
     layerInfoDiv.innerHTML = '';
     mapLinkDiv.innerHTML = '';
     generatedUrlsDiv.innerHTML = '';
+    coordsDiv.innerHTML = '';
 
     if (!id) {
         layerInfoDiv.innerHTML = 'Please enter an ID.';
@@ -96,6 +102,7 @@ function selectLayer(layerDiv, layer) {
     }
 
     layerDiv.classList.add('selected');
+    displayLayerCoordinates(layer);
     displayMapLink(layer);
 }
 
@@ -105,7 +112,7 @@ function lonLatToXY(lon, lat) {
     return { x, y };
 }
 
-function displayMapLink(layer) {
+function calculateCenterAndZoom(layer) {
     const boundingBox = layer.querySelector('WGS84BoundingBox');
     const lowerCorner = boundingBox.querySelector('LowerCorner').textContent.split(' ');
     const upperCorner = boundingBox.querySelector('UpperCorner').textContent.split(' ');
@@ -126,6 +133,20 @@ function displayMapLink(layer) {
     const tiles = Math.max(mapWidthInTiles, mapHeightInTiles);
     const zoom = Math.floor(Math.log2(tiles)) + 2;
 
+    return { lon, lat, zoom };
+}
+
+function displayLayerCoordinates(layer) {
+    const { lon, lat, zoom } = calculateCenterAndZoom(layer);
+    const coordsDiv = document.getElementById('layerCoordinates');
+    
+    if (!coordsDiv) return;
+    
+    coordsDiv.innerHTML = `<p>Center: ${lon.toFixed(6)}, ${lat.toFixed(6)} | Zoom: ${zoom}</p>`;
+}
+
+function displayMapLink(layer) {
+    const { lon, lat, zoom } = calculateCenterAndZoom(layer);
     const identifier = layer.querySelector('Identifier').textContent;
     const layerUrl = generateUrl(identifier);
 

@@ -45,6 +45,15 @@ body {
     background-color: #e0e0e0;
     border-color: #888;
 }
+.layer-coordinates {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 14px;
+    color: #444;
+}
 .map-link, .generated-urls {
     margin-top: 20px;
 }
